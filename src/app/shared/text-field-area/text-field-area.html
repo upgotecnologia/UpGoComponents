@@ -1,0 +1,16 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="outline" floatLabel="always" class="text-field-area">
+    <mat-label>{{ label }}</mat-label>
+
+    <textarea
+      matInput
+      [rows]="rows"
+      [formControlName]="controlName"
+      [placeholder]="placeholder || label"
+      [disabled]="disabled"
+    ></textarea>
+
+    <mat-error *ngIf="getErrorMessage()">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
+</div>
+

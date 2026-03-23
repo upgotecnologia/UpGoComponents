@@ -1,0 +1,20 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="outline" floatLabel="always" class="search-field">
+    <mat-label>{{ label }}</mat-label>
+
+    <mat-icon *ngIf="prefixIcon" matPrefix>{{ prefixIcon }}</mat-icon>
+
+    <input
+      matInput
+      type="search"
+      [formControlName]="controlName"
+      [placeholder]="placeholder || label"
+      [disabled]="disabled"
+    />
+
+    <mat-icon *ngIf="suffixIcon" matSuffix>{{ suffixIcon }}</mat-icon>
+
+    <mat-error *ngIf="getErrorMessage()">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
+</div>
+

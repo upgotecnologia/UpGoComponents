@@ -1,0 +1,19 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="outline" floatLabel="always" class="time-field">
+    <mat-label>{{ label }}</mat-label>
+
+    <input
+      matInput
+      [formControlName]="controlName"
+      [matTimepicker]="picker"
+      [placeholder]="placeholder || label"
+      [disabled]="disabled"
+    />
+
+    <mat-timepicker-toggle matIconSuffix [for]="picker" />
+    <mat-timepicker #picker />
+
+    <mat-error *ngIf="getErrorMessage()">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
+</div>
+
